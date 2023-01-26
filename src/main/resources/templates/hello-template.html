@@ -1,0 +1,12 @@
+<!--
+thymeleaf template의 장점 - 서버없이 파일 절대 경로로 실행 가능
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--
+서버를 통해서 hello! empty 값이 hello ' + ${name} 로 바뀜
+${name} => 키 값이 name인 value 값을 가져옴
+ -->
+<p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
+</html>
