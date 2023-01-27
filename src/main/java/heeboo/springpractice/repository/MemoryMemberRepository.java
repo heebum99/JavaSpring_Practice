@@ -24,7 +24,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
-       return store.values().stream() //stream 객체 생성
+        return store.values().stream() //stream 객체 생성
                 .filter(member -> member.getName().equals(name)) //filter로 원하는 데이터 가공,추출
                 .findAny();
     }
@@ -32,5 +32,9 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() { //store를 비우는 역할
+        store.clear();
     }
 }
