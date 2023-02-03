@@ -6,8 +6,12 @@ import heeboo.springpractice.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-public class MemberService {
-    private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+public class MemberService { //ctrl shift t => 테스트 클래스 생성
+    private final MemoryMemberRepository memberRepository;
+
+    public MemberService(MemoryMemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     //회원 가입
     public long join(Member member) {
