@@ -1,9 +1,11 @@
 package heeboo.springpractice.repository;
 
 import heeboo.springpractice.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository //컴포넌트 스캔 방식
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
