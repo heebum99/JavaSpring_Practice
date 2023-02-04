@@ -4,8 +4,11 @@ import heeboo.springpractice.domain.Member;
 import heeboo.springpractice.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 //Controller => 외부 요청을 받는다
 //Service => 비지니스 로직 생성
@@ -41,5 +44,12 @@ public class MemberController { //스프링 컨테이너가 뜰 때 Controller �
         memberService.join(member);
 
         return "redirect:/"; //redirect로 홈 화면으로 이동
+    }
+
+    @GetMapping("/members")
+    public String list(Model model){
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members",members);
+        return "members/memberList";
     }
 }
