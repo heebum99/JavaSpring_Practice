@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 //@Repository //컴포넌트 스캔 방식
-public class MemoryMemberRepository implements MemberRepository {
+public class MemoryMemberRepository implements MemberRepository { //MemberRepository 인터페이스에 대한 구현체
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L; //0,1,2.... 키 값을 생성해주는 역할

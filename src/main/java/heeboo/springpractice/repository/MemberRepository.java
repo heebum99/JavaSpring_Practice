@@ -5,7 +5,7 @@ import heeboo.springpractice.domain.Member;
 import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository {
+public interface MemberRepository { //인터페이스
     Member save(Member member); //회원 저장
 
     //Optional => Null을 반환하는 방법 중 하나로 NullPointException이 발생하지 않도록 도와줌

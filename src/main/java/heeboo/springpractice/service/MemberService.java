@@ -1,6 +1,7 @@
 package heeboo.springpractice.service;
 
 import heeboo.springpractice.domain.Member;
+import heeboo.springpractice.repository.MemberRepository;
 import heeboo.springpractice.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +11,11 @@ import java.util.Optional;
 
 //@Service //컴포넌트 스캔 방식
 public class MemberService { //ctrl shift t => 테스트 클래스 생성
-    private final MemoryMemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Autowired
     //MemberService를 생성할때 spring bean에 등록되어 있는 memberRepository 객체를 가져다가 넣어줌
-    public MemberService(MemoryMemberRepository memberRepository) {
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
