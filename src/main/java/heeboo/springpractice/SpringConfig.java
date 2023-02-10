@@ -1,6 +1,7 @@
 package heeboo.springpractice;
 
 import heeboo.springpractice.repository.JdbcMemberRepository;
+import heeboo.springpractice.repository.JdbcTemplateMemberRepository;
 import heeboo.springpractice.repository.MemberRepository;
 import heeboo.springpractice.repository.MemoryMemberRepository;
 import heeboo.springpractice.service.MemberService;
@@ -31,7 +32,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
 }
