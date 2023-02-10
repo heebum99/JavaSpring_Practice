@@ -1,8 +1,14 @@
 package heeboo.springpractice.domain;
 
+import javax.persistence.*;
+
+@Entity //Jpa가 관리하는 엔티티임을 표시
 public class Member {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public Long getId() {
