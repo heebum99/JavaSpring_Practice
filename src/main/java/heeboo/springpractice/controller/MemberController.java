@@ -26,6 +26,7 @@ public class MemberController { //스프링 컨테이너가 뜰 때 Controller �
     //생성자 주입 외에도 필드주입(잘 사용x), setter주입(누군가 사용할때 public으로 되어있어야함), 생성자 주입이 가장 좋음
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = "+memberService.getClass()); //스프링 컨테이너에 가짜 스프링빈이 등록되는지에 대해 확인 (프록시)
     }
 
     @GetMapping("/members/new") //URL창에서 입력후 Enter치는 경우(조회하는 경우 사용)

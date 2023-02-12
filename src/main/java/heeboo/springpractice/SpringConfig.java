@@ -1,5 +1,6 @@
 package heeboo.springpractice;
 
+import heeboo.springpractice.aop.TimeTraceAop;
 import heeboo.springpractice.repository.*;
 import heeboo.springpractice.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,11 +43,16 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+//    @Bean //스프링 빈에 직접 등록
+//    public TimeTraceAop timeTraceApp() {
+//        return new TimeTraceAop();
+//    }
+
 //    @Bean
 //    public MemberRepository memberRepository() {
-        //return new MemoryMemberRepository();
-        //return new JdbcMemberRepository(dataSource);
-        //return new JdbcTemplateMemberRepository(dataSource);
+    //return new MemoryMemberRepository();
+    //return new JdbcMemberRepository(dataSource);
+    //return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 //    }
 
